@@ -20,6 +20,11 @@ nav{
 
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
 h1{
     font-family: "Mitr", sans-serif;
     font-weight: 400;
@@ -130,11 +135,12 @@ h2{
 }
 
 .input_cost{
-    width: 100%;
+    width:100%;
     height: 100%;
     border: transparent;
     background-color: #8BCCB1;
     border-radius: 3px;
+    padding-left: 5px;
 }
 
 #list_div{
@@ -164,10 +170,21 @@ h2{
     transition: border-color 0.3s ease;
 }
 
-#bin_icon{
+.bin_icon{
     width: 30px;
     height: 30px;
-    fill: #646464;
+    background-color: #646464;
+    mask-image: url('icon/icons8-bin.svg');
+    -webkit-mask-image: url('icon/icons8-bin.svg');
+
+    mask-size: cover;
+    -webkit-mask-size: cover;
+
+    transition: backgroud-color 0.2s ease;
+}
+
+.delete_bt:hover .bin_icon{
+    background-color: #FF5858;
 }
 
 .delete_bt:hover{
