@@ -49,10 +49,8 @@ h2{
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 20px;
-    padding-left: 10%;
+    padding-left:8%;
 }
 
 .head{
@@ -90,20 +88,23 @@ h2{
 .table{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 15px;
+    justify-content: center;
     width: 100%;
 }
 
 .h_table{
     display: flex;
+    flex: 1;
+    justify-self: start;
+    align-self: flex-start;
     width: 80%;
     height: 40px;
     background-color: #BADFCD;
     padding: 10px;
     border-radius: 10px;
     gap: 10px;
+    border: 3px solid transparent;
     box-shadow: 0 4px 4px rgba(62, 62, 62, 0.5);
 
 }
@@ -123,7 +124,7 @@ h2{
 }
 
 #head_15{
-    width: 20%;
+    width: 25%;
 }
 
 .list_table{
@@ -147,10 +148,16 @@ h2{
     display: flex;
     width:100%;
     gap: 10px;
+    flex: 1;
     align-items: center;
 }
 
 #list{
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    height: 40px;
     background-color: transparent;
     width:80%;
     border: 3px solid #05B084;
@@ -189,4 +196,40 @@ h2{
 
 .delete_bt:hover{
     border-color: #FF5858;
+}
+
+.add_bt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82%;
+    padding: 10px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #EBEBEB;
+    border: 3px solid #4A4A48;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+.add_bt:hover{
+    border-color: #05B084;
+    background: rgba(5,176,132,0.58);
+}
+
+.add_bt:hover .add_icon{
+    background-color: #F1EDEA;
+}
+
+.add_icon{
+    height: 20px;
+    width: 20px;
+    background-color: #999999;
+
+    mask-image: url("icon/icons8-plus.svg");
+    -webkit-mask-image: url("icon/icons8-plus.svg");
+
+    mask-size: cover;
+    -webkit-mask-size: cover;
 }
