@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PSCP Project</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <h1>Logo</h1>
+        </nav>
+        <div class="group">
+            <div class="head">
+                <div class="head_no"><h1>1</h1></div>
+                <h1>คำนวณต้นทุนวัตุดิบ</h1>
+            </div>
+            <div id="amount_div">
+                <h2 style="color: #015A84;">รายการวัตถุดิบสำหรับผลิตสินค้าจำนวน</h2>
+                <input type="number" id="amount_input" name="amount" value="0">
+            </div>
+            <div class="table">
+                <div style="width: 100%;">
+                    <div class="h_table">
+                        <div id="head_11" class="head_t">
+                            <h2>รายการ</h2>
+                        </div>
+                        <div id="head_124" class="head_t">
+                            <h2>ราคา</h2>
+                        </div>
+                        <div id="head_124" class="head_t">
+                            <h2>ปริมาณ</h2>
+                        </div>
+                        <div id="head_124" class="head_t">
+                            <h2>จำนวนที่ใช้</h2>
+                        </div>
+                        <div id="head_15" class="head_t">
+                            <h2>ต้นทุน/หน่วย</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_table">
+                    <div id="list_div">
+                        <div class="h_table" id="list">
+                            <div id="head_11" class="list_t">
+                                <input type="text" id="cost_list" name="cost_list" class="input_cost">
+                            </div>
+                            <div id="head_124" class="list_t">
+                                <input type="text" id="cost_price" name="cost_price" class="input_cost">
+                            </div>
+                            <div id="head_124" class="list_t">
+                                <input type="text" id="cost_amount" name="cost_amount" class="input_cost">
+                            </div>
+                            <div id="head_124" class="list_t">
+                                <input type="text" id="cost_used" name="cost_used" class="input_cost">
+                            </div>
+                            <div id="head_15" class="list_t" style="background: rgba(139,204,177,0.3);">
+                                <h2></h2>
+                            </div>
+                        </div>
+                        <button class="delete_bt">
+                            <img src="icon/icons8-bin.svg" alt="bin_icon" id="bin_icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
