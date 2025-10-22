@@ -35,6 +35,27 @@
                 </button>
             </div>
         </template>
+        <template id="else_list_template">
+            <div id="list_div">
+                <div id="list2">
+                    <div id="head_11" class="list_t">
+                        <input type="text" name="cost_list" class="input_cost">
+                    </div>
+                    <div id="head_124" class="list_t">
+                        <input type="number" id="expenses" value="0" name="expenses" class="input_cost">
+                    </div>
+                    <div id="head_124" class="list_t">
+                        <input type="number" id="product_amount" value="0" name="product_amount" class="input_cost">
+                    </div>
+                    <div id="head_15" class="list_t">
+                        <h2></h2>
+                    </div>
+                </div>
+                <button class="delete_bt" type="button">
+                    <div class="bin_icon"></div>
+                </button>
+            </div>
+        </template>
         <nav>
             <h1>Logo</h1>
         </nav>
@@ -65,7 +86,7 @@
                         <h2>ต้นทุน/หน่วย</h2>
                     </div>
                 </div>
-            <form method="post" action="/app.py">
+                <form method="post" action="/app.py">
                 <div class="list_table" id="cost_list_div">
                     <div id="list_div">
                         <div id="list">
@@ -92,6 +113,54 @@
                 </div>
             </form>
                 <button class="add_bt" onclick="new_list_cost()">
+                    <div class="add_icon"></div>
+                </button>
+            </div>
+        </div>
+        <div class="group">
+            <div class="head">
+                <div class="head_no"><h1>1</h1></div>
+                <h1>ค่าใช้จ่ายทางอ้อมและค่าเสื่อม (ต่อเดือน)</h1>
+            </div>
+            <div class="table">
+                <div class="h_table2">
+                    <div id="head_11" class="head_t">
+                        <h2>รายการ</h2>
+                    </div>
+                    <div id="head_124" class="head_t">
+                        <h2>ค่าใช้จ่าย</h2>
+                    </div>
+                    <div id="head_124" class="head_t">
+                        <h2>จำนวนที่ผลิตได้</h2>
+                    </div>
+                    <div id="head_15" class="head_t" style="background: transparent;">
+                        <h2>ต้นทุน/หน่วย</h2>
+                    </div>
+                </div>
+            <form method="post" action="/app.py">
+                <div class="list_table" id="else_list_div">
+                    <div id="list_div">
+                        <div id="list2">
+                            <div id="head_11" class="list_t">
+                                <input type="text" name="cost_list" class="input_cost">
+                            </div>
+                            <div id="head_124" class="list_t">
+                                <input type="number" id="expenses" value="0" name="expenses" class="input_cost">
+                            </div>
+                            <div id="head_124" class="list_t">
+                                <input type="number" id="product_amount" value="0" name="product_amount" class="input_cost">
+                            </div>
+                            <div id="head_15" class="list_t">
+                                <h2></h2>
+                            </div>
+                        </div>
+                        <button class="delete_bt" type="button">
+                            <div class="bin_icon"></div>
+                        </button>
+                    </div>
+                </div>
+            </form>
+                <button class="add_bt" onclick="new_list_else()">
                     <div class="add_icon"></div>
                 </button>
             </div>
