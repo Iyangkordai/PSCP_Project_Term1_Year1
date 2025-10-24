@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- เริ่ม template ของ หัวข้อต้นทุนวัตถุดิบ -->
         <template id="cost_list_template">
             <div id="list_div">
                 <div id="list">
@@ -35,6 +36,9 @@
                 </button>
             </div>
         </template>
+        <!-- จบ section template ต้นทุนวัตถุดิบ -->
+
+        <!-- เริ่ม template หัวข้อค่าใช้จ่ายทางอ้อม -->
         <template id="else_list_template">
             <div id="list_div">
                 <div id="list2">
@@ -56,9 +60,15 @@
                 </button>
             </div>
         </template>
+        <!-- จบ template ค่าใช้จ่ายทางอ้อม -->
+
+        <!-- เริ่ม template หัวข้อต้นทุรบรรจุภัณฑ์ -->
+
+        <!-- จบ template หัวข้อต้นทุรบรรจุภัณฑ์ -->
         <nav>
             <h1>Logo</h1>
         </nav>
+        <!-- ต้นทุนวัตถุดิบ -->
         <div class="group">
             <div class="head">
                 <div class="head_no"><h1>1</h1></div>
@@ -68,7 +78,9 @@
                 <h2 style="color: #015A84;">รายการวัตถุดิบสำหรับผลิตสินค้าจำนวน</h2>
                 <input type="number" id="amount_input" name="amount" value="0">
             </div>
+            <!-- ตารางทั้งหมด ต้นทุนวัตถุดิบ-->
             <div class="table">
+                <!-- หัวตาราง ต้นทุนวัตถุดิบ -->
                 <div class="h_table">
                     <div id="head_11" class="head_t">
                         <h2>รายการ</h2>
@@ -86,43 +98,53 @@
                         <h2>ต้นทุน/หน่วย</h2>
                     </div>
                 </div>
+                <!-- จบ section หัวตารางต้นทุนวัตถุดิบ -->
+
+                <!-- เริ่ม coloumn ของต้นทุนวัตถุดิบ -->
                 <form method="post" action="/app.py">
-                <div class="list_table" id="cost_list_div">
-                    <div id="list_div">
-                        <div id="list">
-                            <div id="head_11" class="list_t">
-                                <input type="text" name="cost_list" class="input_cost">
+                    <div class="list_table" id="cost_list_div">
+                        <div id="list_div">
+                            <div id="list">
+                                <div id="head_11" class="list_t">
+                                    <input type="text" name="cost_list" class="input_cost">
+                                </div>
+                                <div id="head_124" class="list_t">
+                                    <input type="number" value="0" name="cost_price" class="input_cost">
+                                </div>
+                                <div id="head_124" class="list_t">
+                                    <input type="number" value="0" name="cost_amount" class="input_cost">
+                                </div>
+                                <div id="head_124" class="list_t">
+                                    <input type="number" value="0" name="cost_used" class="input_cost">
+                                </div>
+                                <div id="head_15" class="list_t">
+                                    <h2></h2>
+                                </div>
                             </div>
-                            <div id="head_124" class="list_t">
-                                <input type="number" value="0" name="cost_price" class="input_cost">
-                            </div>
-                            <div id="head_124" class="list_t">
-                                <input type="number" value="0" name="cost_amount" class="input_cost">
-                            </div>
-                            <div id="head_124" class="list_t">
-                                <input type="number" value="0" name="cost_used" class="input_cost">
-                            </div>
-                            <div id="head_15" class="list_t">
-                                <h2></h2>
-                            </div>
+                            <button class="delete_bt" type="button">
+                                <div class="bin_icon"></div>
+                            </button>
                         </div>
-                        <button class="delete_bt" type="button">
-                            <div class="bin_icon"></div>
-                        </button>
                     </div>
-                </div>
-            </form>
+                </form>
+                <!-- จบ section coloumn ของต้นทุนวัตถุดิบ -->
                 <button class="add_bt" onclick="new_list_cost()">
                     <div class="add_icon"></div>
                 </button>
             </div>
+            <!-- จบ section ตารางต้นทุนวัตถุดิบ -->
         </div>
+        <!-- จบ section ใหญ่สุดของหัวข้อต้นทุนวัถุดิบ -->
+
+        <!-- เริ่ม section ค่าเสื่อม -->
         <div class="group">
             <div class="head">
                 <div class="head_no"><h1>2</h1></div>
                 <h1>ค่าใช้จ่ายทางอ้อมและค่าเสื่อม (ต่อเดือน)</h1>
             </div>
+            <!-- ตาราง ค่าเสื่อม -->
             <div class="table">
+                <!-- เริ่ม section หัวข้อตารางของ ค่าเสื่อม -->
                 <div class="h_table2">
                     <div id="head_11" class="head_t">
                         <h2>รายการ</h2>
@@ -137,34 +159,48 @@
                         <h2>ต้นทุน/หน่วย</h2>
                     </div>
                 </div>
-            <form method="post" action="/app.py">
-                <div class="list_table" id="else_list_div">
-                    <div id="list_div">
-                        <div id="list2">
-                            <div id="head_11" class="list_t">
-                                <input type="text" name="cost_list" class="input_cost">
+                <!-- จบ setion หัวข้อตาราง ค่าเสื่อม -->
+
+                <!-- เริ่ม coloumn ตาราง ค่าเสื่อม -->
+                <form method="post" action="/app.py">
+                    <div class="list_table" id="else_list_div">
+                        <div id="list_div">
+                            <div id="list2">
+                                <div id="head_11" class="list_t">
+                                    <input type="text" name="cost_list" class="input_cost">
+                                </div>
+                                <div id="head_124" class="list_t">
+                                    <input type="number" id="expenses" value="0" name="expenses" class="input_cost">
+                                </div>
+                                <div id="head_124" class="list_t">
+                                    <input type="number" id="product_amount" value="0" name="product_amount" class="input_cost">
+                                </div>
+                                <div id="head_15" class="list_t">
+                                    <h2></h2>
+                                </div>
                             </div>
-                            <div id="head_124" class="list_t">
-                                <input type="number" id="expenses" value="0" name="expenses" class="input_cost">
-                            </div>
-                            <div id="head_124" class="list_t">
-                                <input type="number" id="product_amount" value="0" name="product_amount" class="input_cost">
-                            </div>
-                            <div id="head_15" class="list_t">
-                                <h2></h2>
-                            </div>
+                            <button class="delete_bt" type="button">
+                                <div class="bin_icon"></div>
+                            </button>
                         </div>
-                        <button class="delete_bt" type="button">
-                            <div class="bin_icon"></div>
-                        </button>
                     </div>
-                </div>
-            </form>
+                </form>
+                <!-- จบ section column ตาราง ค่าเสื่อม -->
                 <button class="add_bt" onclick="new_list_else()">
                     <div class="add_icon"></div>
                 </button>
             </div>
+            <!-- จบ section ตาราง ค่าเสื่อม -->
         </div>
+        <!-- จบ section ใหญ่ ค่าเสื่อม -->
+
+        <!-- เริ่ม section บรรจุภัณฑ์ -->
+
+        <!-- จบ section ใหญ่ บรรจุภัณฑ์ -->
+
+        <!-- เริ่ม section แรงงาน -->
+
+        <!-- จบ section ใหญ่ แรงงาน -->
         <script src="{{url_for('static', filename='script.js')}}"></script>
     </body>
     </html>
