@@ -1,6 +1,6 @@
 const template_cost = document.getElementById("cost_list_template")
 const template_else = document.getElementById("else_list_template")
-const template_package = document.getElementById("packgate_list_template")
+const template_package = document.getElementById("package_list_template")
 let cost_div = document.getElementById("cost_list_div")
 let else_div = document.getElementById("else_list_div")
 let package_div = document.getElementById("packgate_list_div")
