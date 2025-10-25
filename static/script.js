@@ -66,3 +66,16 @@ else_div.addEventListener('click', function(event){
         }
     }
 })
+
+// ฟังก์ชั่นการลบตารางของ บรรจุภัณฑ์
+package_div.addEventListener('click', function(event){
+
+    const delete_bt = event.target.closest('.delete_bt')
+    if (delete_bt){
+        const want_row = delete_bt.closest("#list_div")
+        if (want_row && package_div.childElementCount > 1){
+            console.log("found want row ")
+            want_row.remove()
+        }
+    }
+})
