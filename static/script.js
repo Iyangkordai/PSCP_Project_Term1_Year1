@@ -1,7 +1,9 @@
 const template_cost = document.getElementById("cost_list_template")
 const template_else = document.getElementById("else_list_template")
+const template_package = document.getElementById("packgate_list_template")
 let cost_div = document.getElementById("cost_list_div")
 let else_div = document.getElementById("else_list_div")
+let package_div = document.getElementById("packgate_list_div")
 
 // รวมฟังก์ชั่นการเพิ่มตาราง
 
@@ -21,6 +23,16 @@ function new_list_else(){
     const child = template_else.content.cloneNode(true)
     else_div.appendChild(child)
     else_div.lastElementChild.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+    })
+}
+
+// ฟังก์ชั่นเพิ่มตารางของ ค่าบรรจุภัณฑ์
+function new_list_package(){
+    const child = template_package.content.cloneNode(true)
+    package_div.appendChild(child)
+    package_div.lastElementChild.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest'
     })
