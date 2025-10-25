@@ -126,6 +126,23 @@ h2{
 
 }
 
+.h_table3{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    justify-self: start;
+    align-self: flex-start;
+    width: 84%;
+    height: 40px;
+    background-color: #BADFCD;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    border: 3px solid transparent;
+    box-shadow: 0 4px 4px rgba(62, 62, 62, 0.5);
+
+}
+
 .head_t{
     text-align: center;
     justify-content: center;
@@ -186,6 +203,19 @@ h2{
 }
 
 #list2{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    height: 60px;
+    background-color: transparent;
+    flex: 1;
+    border: 3px solid #05B084;
+    box-shadow: 0 4px 4px rgba(62, 62, 62, 0.25);
+}
+
+#list3{
     display: flex;
     justify-content: space-between;
     padding: 10px;
