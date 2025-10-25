@@ -195,8 +195,61 @@
         <!-- จบ section ใหญ่ ค่าเสื่อม -->
 
         <!-- เริ่ม section บรรจุภัณฑ์ -->
+        <div class="group">
+            <div class="head">
+                <div class="head_no"><h1>2</h1></div>
+                <h1>คำนวณค่าบรรจุภัณฑ์</h1>
+            </div>
+            <!-- ตาราง บรรจุภัณฑ์ -->
+            <div class="table">
+                <!-- เริ่ม section หัวข้อตารางของ บรรจุภัณฑ์ -->
+                <div class="h_table2">
+                    <div id="head_11" class="head_t">
+                        <h2>รายการ</h2>
+                    </div>
+                    <div id="head_124" class="head_t">
+                        <h2>ราคา</h2>
+                    </div>
+                    <div id="head_124" class="head_t">
+                        <h2>ปริมาณ</h2>
+                    </div>
+                    <div id="head_15" class="head_t" style="background: transparent;">
+                        <h2>ต้นทุน/หน่วย</h2>
+                    </div>
+                </div>
+                <!-- จบ setion หัวข้อตาราง บรรจุภัณฑ์ -->
 
-        <!-- จบ section ใหญ่ บรรจุภัณฑ์ -->
+                <!-- เริ่ม coloumn ตาราง บรรจุภัณฑ์ -->
+                <form method="post" action="/app.py">
+                    <div class="list_table" id="else_list_div">
+                        <div id="list_div">
+                            <div id="list2">
+                                <div id="head_11" class="list_t">
+                                    <input type="text" name="package_list" class="input_cost">
+                                </div>
+                                <div id="head_124" class="list_t">
+                                    <input type="number" id="package_pice" value="0" name="package_pice" class="input_cost">
+                                </div>
+                                <div id="head_124" class="list_t">
+                                    <input type="number" id="package_amount" value="0" name="package_pice" class="input_cost">
+                                </div>
+                                <div id="head_15" class="list_t">
+                                    <h2></h2>
+                                </div>
+                            </div>
+                            <button class="delete_bt" type="button">
+                                <div class="bin_icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <!-- จบ section column ตาราง บรรจุภัณฑ์ -->
+                <button class="add_bt" onclick="new_list_else()">
+                    <div class="add_icon"></div>
+                </button>
+            </div>
+            <!-- จบ section ตาราง บรรจุภัณฑ์ -->
+        </div>
 
         <!-- เริ่ม section แรงงาน -->
 
