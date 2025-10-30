@@ -51,9 +51,11 @@
                     <div>
                         <p>ต้นทุนวัตถุดิบทั้งหมด</p>
                         <span><strong>{{ "%.2f"|format(cost_total) }}</strong></span>
+                        <p>ค่าเสื่อมทั้งหมด</p>
+                        <span><strong>{{ "%.2f"|format(depreciation_total) }}</strong></span>
                     </div>
                     <div>
-                        sum
+                        <span><strong>{{ "%.2f"|format(depreciation_total + depreciation_total) }}</strong></span>
                     </div>
                 </div>
             </div>
