@@ -48,6 +48,19 @@ def sendData():
         #บรรจุภัณฑ์
         package_price = request.form.getlist('package_price', type=float)
         package_amount = request.form.getlist('package_amount', type=float)
+        package_total = 0.0
+        for package_price, amount in zip(package_price, package_amount):
+            
+            row_total = 0.0
+            
+            # ป้องกันการหารด้วย 0 (ZeroDivisionError)
+            if amount > 0:
+                # สูตรคำนวณต้นทุนของแถวนี้
+                # (ราคา / ปริมาณทั้งหมด) * จำนวนที่ใช้
+                row_total = package_price/amount
+            
+            # เพิ่มต้นทุนแถวนี้ เข้าไปในยอดรวมทั้งหมด
+            package_total += row_total
 
         #แรงงาน
 
@@ -55,6 +68,7 @@ def sendData():
             'summary.html', 
             cost_total=cost_total,
             depreciation_total=depreciation_total,
+            package_total=package_total
         )
 
 
