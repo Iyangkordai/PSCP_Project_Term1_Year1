@@ -51,6 +51,7 @@ h2{
     flex-direction: column;
     gap: 20px;
     padding-left:8%;
+    padding-bottom: 20px;
 }
 
 .head{
@@ -81,7 +82,7 @@ h2{
     border: transparent;
     background-color: #8BCCB1;
     border-radius: 10px;
-    padding-left: 20px;
+    padding-left: 10px;
     color: #2D312F;
 }
 
@@ -161,6 +162,8 @@ h2{
     width: 25%;
     background: rgba(139,204,177,0.3);
     border-radius: 3px;
+    display: flex;
+    align-items: center;
 }
 
 .list_table{
@@ -296,4 +299,55 @@ h2{
 
     mask-size: cover;
     -webkit-mask-size: cover;
+}
+
+.cost_result, .else_result, .package_result, .labor_result{
+    font-family: "Noto Sans Thai", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "width" 100;
+    padding-left: 10px;
+    margin: 0px;
+    font-size: small;
+}
+
+#labor_div{
+    display: flex;
+    flex-direction: column  ;
+    background-color: #BADFCD;
+    width: 84%;
+    height: 100%;
+    padding: 30px 80px;
+    border-radius: 10px;
+    gap: 10px;
+    border: 3px solid transparent;
+    box-shadow: 0 4px 4px rgba(62, 62, 62, 0.25);
+}
+
+.labor_input_div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#labor_result_div{
+    background-color: #8BCCB1;
+    border: 1px solid #05B084;
+    width: 40%;
+    height: 50px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.labor_input{
+    background-color: #EBECE7;
+    border: 1px solid #05B084;
+    width: 40%;
+    height: 50px;
+    padding-left: 10px;
+    border-radius: 3px;
 }
