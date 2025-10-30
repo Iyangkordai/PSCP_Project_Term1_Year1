@@ -10,14 +10,14 @@ def index():
 def sendData():
     if request.method == 'POST':
         #ต้นทุนวัตถุดิบ
-        name_1 = request.form.getlist('name_1')
+        cost_list = request.form.getlist('cost_list')
         cost_price = request.form.getlist('cost_price', type=float)
         cost_amount = request.form.getlist('cost_amount', type=float)
         cost_used = request.form.getlist('cost_used', type=float)
 
         grand_total = 0.0
         all_cost_details = []
-        for name, price, amount, used in zip(name_1, cost_price, cost_amount, cost_used):
+        for name, price, amount, used in zip(cost_list, cost_price, cost_amount, cost_used):
             
             row_total = 0.0
             
@@ -38,7 +38,7 @@ def sendData():
             })
 
         #ค่าเสื่อม
-        name_2 = request.form.getlist('name_2')
+        depreciation_list = request.form.getlist('depreciation_list')
         expenses = request.form.getlist('expenses', type=float)
         product_amount = request.form.getlist('product_amount', type=float)
 
