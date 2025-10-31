@@ -351,3 +351,28 @@ h2{
     padding-left: 10px;
     border-radius: 3px;
 }
+
+.submitall_bt {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    width: 10%;
+    padding: 10px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #ebebeb00;
+    border: 5px solid #05B084;
+    font-family: "Noto Sans Thai", sans-serif;
+    font-size: 120%;
+    font-weight: 650;
+    color: #05B084;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    transition: color 0.2s ease;
+    margin-bottom: 30px;
+}
+
+.submitall_bt:hover{
+    background: rgba(5,176,132,0.58);
+    color: white;
+}
