@@ -63,12 +63,19 @@ def sendData():
             package_total += row_total
 
         #แรงงาน
+        all_labor = request.form.get('all_labor', type=float)
+        amount_labor = request.form.get('amount_labor', type=float)
+        labor_total = 0.0
+        if amount_labor > 0:
+            #สูตรคำนวณต้นทุนเงินเดือน
+            labor_total = all_labor/amount_labor
 
         return render_template(
             'summary.html', 
             cost_total=cost_total,
             depreciation_total=depreciation_total,
-            package_total=package_total
+            package_total=package_total,
+            labor_total=labor_total
         )
 
 
