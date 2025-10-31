@@ -13,7 +13,16 @@
     <body>
         <nav>
             <img class="logo" src="static/icon/Logo.png">
+            <button type="button" class="user_manual_bt" id="user_manual_bt">
+                <div class="user_manual_icon"></div>
+            </button>
         </nav>
+
+        <div id="manual" class="manual">
+            <div class="manual-content">
+                <h3>เนื้อหา</h3>
+            </div>
+        </div>
 
         <div class="body_div">
             <div id="summary_div">
@@ -72,5 +81,6 @@
                 </div>
             </div>
         </div>
+        <script src="{{url_for('static', filename='summary.js')}}"></script>
     </body>
 </html>

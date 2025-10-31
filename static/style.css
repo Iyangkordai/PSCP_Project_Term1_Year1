@@ -13,17 +13,47 @@ body{
 }
 
 nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #05B084;
     padding: 10px;
     color: #F1EDEA;
     box-shadow:0 4px 5px rgba(62, 62, 62, 0.25);
-
 }
 
 .logo {
     width: 150px;
     height: auto;
     filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.user_manual_bt{
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 0px;
+}
+
+.user_manual_bt:hover .user_manual_icon{
+    background-color: #055b45;
+}
+
+.user_manual_icon{
+    height: 30px;
+    width: 30px;
+    background-color: hsl(0, 0%, 100%);
+    border: 0px;
+
+    mask-image: url("icon/user-manual.svg");
+    -webkit-mask-image: url("icon/user-manual.svg");
+
+    mask-size: cover;
+    -webkit-mask-size: cover;
 }
 
 input::-webkit-outer-spin-button,
@@ -381,4 +411,42 @@ h2{
 .submitall_bt:hover{
     background: rgba(5,176,132,0.58);
     color: white;
+}
+
+.manual {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.manual.show {
+    display: block;
+    opacity: 1;
+}
+
+.manual-content {
+    justify-self: center;
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 70%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.manual.show .manual-content {
+    transform: translateY(0);
 }

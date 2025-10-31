@@ -5,6 +5,8 @@ let cost_div = document.getElementById("cost_list_div")
 let else_div = document.getElementById("else_list_div")
 let package_div = document.getElementById("packgate_list_div")
 let labor_div = document.getElementById("labor_div")
+var modal_manual = document.getElementById("manual");
+var btn_manual = document.getElementById("user_manual_bt");
 // รวมฟังก์ชั่นการเพิ่มตาราง
 
 // ฟังก์ชั่นเพิ่มตารางของ วัตถุดิบ
@@ -183,3 +185,14 @@ function labor_cal(labor_input){
 labor_div.addEventListener('input', () => {
     labor_cal(labor_div)
 })
+
+// แสดงผลคู่มือการใช้งานเว็บ
+btn_manual.onclick = function() {
+    modal_manual.classList.add("show");
+}
+
+modal_manual.onclick = function(event) {
+    if (event.target == modal_manual) {
+        modal_manual.classList.remove("show");
+    }
+}
