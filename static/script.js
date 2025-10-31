@@ -95,7 +95,7 @@ function cost_cal(cost_input_list){
     cost_amount = parseFloat(cost_amount.value) || 0
     cost_used = parseFloat(cost_used.value) || 0
     if (cost_amount > 0 && item_amount > 0 && cost_used <= cost_amount){
-        cost_result = ((cost_price / cost_amount) * cost_used) / item_amount
+        cost_result = ((cost_price / cost_amount) * cost_used) * item_amount
     }
     if (result_output && cost_used <= cost_amount){
         result_output.textContent = cost_result.toFixed(3)
