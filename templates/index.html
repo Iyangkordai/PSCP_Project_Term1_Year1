@@ -87,11 +87,11 @@
         <!-- จบ template หัวข้อต้นทุรบรรจุภัณฑ์ -->
         <nav>
             <img class="logo" src="static/icon/Logo.png">
-            <button type="button" class="user_manual_bt" id="user_manual_bt">
-                    <div class="user_manual_icon"></div>
+            <button type="button" class="user_manual_bt" id="user_manual_bt" style="display: flex; flex-direction: column; gap: 5px;">
+                    <div class="user_manual_icon" title="คู่มือการใช้งาน"></div>
+                    <h3>คู่มือ</h3>
             </button>
         </nav>
-
         <!-- คู่มือการทำงานตอนกดเปิด -->
         <div id="manual" class="manual">
             <div class="manual-content">
@@ -306,7 +306,27 @@
             <!-- จบ section ใหญ่ แรงงาน -->
             
             <br>
-            <button type="submit" class="submitall_bt">สรุปผล</button>
+            <div style="display: flex; justify-content: space-around;">
+                <button type="button" id="clear_bt" onclick="alert_active()">ล้าง</button>
+                <button type="submit" class="submitall_bt">สรุปผล</button>
+            </div>
+            <div id="alert_box">
+                <div id="alert" ></div>
+                <div id="alert_in"></div>
+                <div id="alert_front">
+                    <div style="display: flex; justify-content: flex-end; width: 100%; position: absolute; top: 0;margin-top: 20px; margin-right: 20px;">
+                        <button onclick="close_alert()" type="button" class="cross_bt"><img src="static/icon/icons8-cross-96.png" alt="cross_icon" style="width: 30px;"></button>
+                    </div>
+                    <img src="static/icon/icons8-alert-50.png" alt="alert_icon" style="width: 70px;">
+                    <h1>!!! คำเตือน !!!</h2>
+                    <h2 style="text-align: center;">หากทำการล้างข้อมูลแล้วจะไม่สามารถกู้คืนข้อมูลที่ล้างไปแล้วได้</h2>
+                    <h2>ยืนยันที่จะทำการล้างข้อมูลหรือไม่</h2>
+                    <div>
+                        <button type="button" onclick="close_alert()" class="cross_bt">ยกเลิก</button>
+                        <button type="button" class="cross_bt" id="accept_clear_bt" onclick="clear_all_list()">ยืนยัน</button>
+                    </div>
+                </div>
+            </div>
         </form>
         <script src="{{url_for('static', filename='script.js')}}"></script>
     </body>

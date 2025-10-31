@@ -7,6 +7,7 @@ let package_div = document.getElementById("packgate_list_div")
 let labor_div = document.getElementById("labor_div")
 var modal_manual = document.getElementById("manual");
 var btn_manual = document.getElementById("user_manual_bt");
+const alert_box = document.getElementById("alert_box")
 // รวมฟังก์ชั่นการเพิ่มตาราง
 
 // ฟังก์ชั่นเพิ่มตารางของ วัตถุดิบ
@@ -195,4 +196,16 @@ modal_manual.onclick = function(event) {
     if (event.target == modal_manual) {
         modal_manual.classList.remove("show");
     }
+}
+
+function alert_active(){
+    alert_box.style.visibility = "visible"
+}
+
+function close_alert(){
+    alert_box.style.visibility = "hidden"
+}
+
+function clear_all_list(){
+    location.reload()
 }
