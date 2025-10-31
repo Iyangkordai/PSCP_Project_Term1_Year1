@@ -10,6 +10,7 @@ def index():
 def sendData():
     if request.method == 'POST':
         #ต้นทุนวัตถุดิบs
+        amount_total = request.form.get('amount', type=int)
         cost_price = request.form.getlist('cost_price', type=float)
         cost_amount = request.form.getlist('cost_amount', type=float)
         cost_used = request.form.getlist('cost_used', type=float)
@@ -23,7 +24,7 @@ def sendData():
             if amount > 0:
                 # สูตรคำนวณต้นทุนของแถวนี้
                 # (ราคา / ปริมาณทั้งหมด) * จำนวนที่ใช้
-                row_total = (price / amount) * used
+                row_total = (price / amount) * used * amount_total
             
             # เพิ่มต้นทุนแถวนี้ เข้าไปในยอดรวมทั้งหมด
             cost_total += row_total
@@ -81,13 +82,14 @@ def sendData():
             labor_total=labor_total,
             product_cost=product_cost,
             profit_percentage=0,
-            final_price=0
+            final_price=0,
+            selling_price=0,
+            final_percentage=0
         )
 
 @app.route("/profit", methods=['POST'])
 def calculate_profit():
     if request.method == 'POST':
-
         #รับค่าต้นทุนรวม
         cost_total = request.form.get('cost_total', 0, type=float)
         depreciation_total = request.form.get('depreciation_total', 0, type=float)
@@ -95,13 +97,20 @@ def calculate_profit():
         labor_total = request.form.get('labor_total', 0, type=float)
         product_cost = request.form.get('product_cost', 0, type=float)
 
-        #รับค่าเปอร์เซ้นต์กำไร
         profit_percentage = request.form.get('profit_percentage', 0, type=float)
 
         #คำนวณราคาขาย
         final_price = 0.0
         if product_cost > 0:
             final_price = product_cost + (product_cost * (profit_percentage / 100))
+
+        #รับราคาขาย
+        selling_price = request.form.get('selling_price', 0, type=float)
+
+        #คำนวณเปอร์เซ็นต์กำไร
+        final_percentage = 0.0
+        if selling_price > 0 and product_cost > 0:
+            final_percentage = ((selling_price - product_cost)/product_cost) * 100
 
         #ส่งค่าราคาขาย
         return render_template(
@@ -111,9 +120,12 @@ def calculate_profit():
             package_total=package_total,
             labor_total=labor_total,
             product_cost=product_cost,
+
             profit_percentage=profit_percentage,
-            final_price=final_price
+            final_price=final_price,
+            selling_price=selling_price,
+            final_percentage=final_percentage
         )
-    
+
 if __name__ == "__main__":
     app.run(debug=True)

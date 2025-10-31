@@ -17,13 +17,7 @@
                 <div class="user_manual_icon"></div>
             </button>
         </nav>
-
-        <div id="manual" class="manual">
-            <div class="manual-content">
-                <h3>เนื้อหา</h3>
-            </div>
-        </div>
-
+        
         <div class="body_div">
             <div id="summary_div">
                 <div id="first_child_sum">
@@ -73,28 +67,39 @@
                 </div>
             </div>
             <div id="profit_div">
-                <div class="profit_child">
-                    <form class="profit_form" action="/profit" method="POST">
-                        <input type="hidden" name="cost_total" value="{{ cost_total }}">
-                        <input type="hidden" name="depreciation_total" value="{{ depreciation_total }}">
-                        <input type="hidden" name="package_total" value="{{ package_total }}">
-                        <input type="hidden" name="labor_total" value="{{ labor_total }}">
-                        <input type="hidden" name="product_cost" value="{{ product_cost }}">
-                        <div>
-                            เปอร์เซ็นต์กำไร
-                            <label for="profit_input"></label>
-                            <input type="number" id="profit_input" name="profit_percentage" value="{{ '%.2f'|format(profit_percentage) }}" min="0" step="0.01">
-                            <button type="submit">คำนวณ</button>
+                <form class="profit_form" action="/profit" method="POST">
+                    <input type="hidden" name="cost_total" value="{{ cost_total }}">
+                    <input type="hidden" name="depreciation_total" value="{{ depreciation_total }}">
+                    <input type="hidden" name="package_total" value="{{ package_total }}">
+                    <input type="hidden" name="labor_total" value="{{ labor_total }}">
+                    <input type="hidden" name="product_cost" value="{{ product_cost }}">
+                    <div id="profit_div">
+                        <div class="profit_child">
+                            <div>
+                                เปอร์เซ็นต์กำไร
+                                <label for="profit_input"></label>
+                                <input type="number" id="profit_percentage_input" name="profit_percentage" value="{{ '%.2f'|format(profit_percentage) }}" min="0" step="0.01">
+                            </div>
+                            <div>
+                                ราคาขาย
+                                <span class="price">{{ "%.2f"|format(final_price) }}</span>
+                            </div>
                         </div>
-                    </form>
-                    <div>
-                        ราคาขายต่อหน่วย
-                        <span class="price">{{ "%.2f"|format(final_price) }}</span>
+                        <div class="profit_child">
+                            profit cla2
+                            <div>
+                                ราคาขาย
+                                <label for="profit_input"></label>
+                                <input type="number" id="profit_price_input" name="selling_price" value="{{ '%.2f'|format(selling_price) }}" min="0" step="0.01">
+                            </div>
+                            <div>
+                                เปอร์เซ็นต์กำไร
+                                <span class="price">{{ "%.2f"|format(final_percentage) }}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="profit_child">
-                    profit cla2
-                </div>
+                    <button type="submit" class="submitall_bt">คำนวณ</button>
+                </form>
             </div>
         </div>
         <script src="{{url_for('static', filename='summary.js')}}"></script>
