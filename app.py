@@ -70,15 +70,17 @@ def sendData():
             #สูตรคำนวณต้นทุนเงินเดือน
             labor_total = all_labor/amount_labor
 
+        #ผลรวมต้นทุนสินค้าทั้งหมด
+        product_cost = cost_total + depreciation_total + package_total + labor_total
+
         return render_template(
             'summary.html', 
             cost_total=cost_total,
             depreciation_total=depreciation_total,
             package_total=package_total,
-            labor_total=labor_total
+            labor_total=labor_total,
+            product_cost = product_cost
         )
-
 
 if __name__ == "__main__":
     app.run(debug=True)
-
