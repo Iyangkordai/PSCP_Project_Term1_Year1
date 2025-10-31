@@ -79,8 +79,41 @@ def sendData():
             depreciation_total=depreciation_total,
             package_total=package_total,
             labor_total=labor_total,
-            product_cost = product_cost
+            product_cost=product_cost,
+            profit_percentage=0,
+            final_price=0
         )
 
+@app.route("/profit", methods=['POST'])
+def calculate_profit():
+    if request.method == 'POST':
+
+        #รับค่าต้นทุนรวม
+        cost_total = request.form.get('cost_total', 0, type=float)
+        depreciation_total = request.form.get('depreciation_total', 0, type=float)
+        package_total = request.form.get('package_total', 0, type=float)
+        labor_total = request.form.get('labor_total', 0, type=float)
+        product_cost = request.form.get('product_cost', 0, type=float)
+
+        #รับค่าเปอร์เซ้นต์กำไร
+        profit_percentage = request.form.get('profit_percentage', 0, type=float)
+
+        #คำนวณราคาขาย
+        final_price = 0.0
+        if product_cost > 0:
+            final_price = product_cost + (product_cost * (profit_percentage / 100))
+
+        #ส่งค่าราคาขาย
+        return render_template(
+            'summary.html',
+            cost_total=cost_total,
+            depreciation_total=depreciation_total,
+            package_total=package_total,
+            labor_total=labor_total,
+            product_cost=product_cost,
+            profit_percentage=profit_percentage,
+            final_price=final_price
+        )
+    
 if __name__ == "__main__":
     app.run(debug=True)
