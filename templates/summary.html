@@ -50,14 +50,16 @@
                     </div>
                     <div>
                         <p>ต้นทุนวัตถุดิบทั้งหมด</p>
-                        <span><strong>{{ "%.2f"|format(cost_total) }}</strong></span>
+                        <span><strong>{{ "%.4f"|format(cost_total) }}</strong></span>
                         <p>ค่าเสื่อมทั้งหมด</p>
-                        <span><strong>{{ "%.2f"|format(depreciation_total) }}</strong></span>
+                        <span><strong>{{ "%.4f"|format(depreciation_total) }}</strong></span>
                         <p>ค่าบรรจุภัณฑ์ทั้งหมด</p>
-                        <span><strong>{{ "%.2f"|format(package_total) }}</strong></span>
+                        <span><strong>{{ "%.4f"|format(package_total) }}</strong></span>
+                        <p>ค่าแรงทั้งหมด</p>
+                        <span><strong>{{ "%.4f"|format(labor_total) }}</strong></span>
                     </div>
                     <div>
-                        <span><strong>{{ "%.2f"|format(depreciation_total + depreciation_total + package_total) }}</strong></span>
+                        <span><strong>{{ "%.4f"|format(product_cost) }}</strong></span>
                     </div>
                 </div>
             </div>
