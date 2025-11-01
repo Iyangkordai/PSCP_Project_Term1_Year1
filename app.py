@@ -97,6 +97,7 @@ def calculate_profit():
         labor_total = request.form.get('labor_total', 0, type=float)
         product_cost = request.form.get('product_cost', 0, type=float)
 
+        #รับเปอร์เซ็นต์กำไรที่ต้องการ
         profit_percentage = request.form.get('profit_percentage', 0, type=float)
 
         #คำนวณราคาขาย
@@ -104,7 +105,7 @@ def calculate_profit():
         if product_cost > 0:
             final_price = product_cost + (product_cost * (profit_percentage / 100))
 
-        #รับราคาขาย
+        #รับราคาขายที่ต้องการ
         selling_price = request.form.get('selling_price', 0, type=float)
 
         #คำนวณเปอร์เซ็นต์กำไร
