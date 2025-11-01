@@ -1,5 +1,5 @@
-var modal_manual = document.getElementById("manual");
-var btn_manual = document.getElementById("user_manual_bt");
+var modal_manual = document.getElementById("manual")
+var btn_manual = document.getElementById("user_manual_bt")
 
 // แสดงผลคู่มือการใช้งานเว็บ
 btn_manual.onclick = function() {

@@ -5,8 +5,8 @@ let cost_div = document.getElementById("cost_list_div")
 let else_div = document.getElementById("else_list_div")
 let package_div = document.getElementById("packgate_list_div")
 let labor_div = document.getElementById("labor_div")
-var modal_manual = document.getElementById("manual");
-var btn_manual = document.getElementById("user_manual_bt");
+var modal_manual = document.getElementById("manual")
+var btn_manual = document.getElementById("user_manual_bt")
 const alert_box = document.getElementById("alert_box")
 // รวมฟังก์ชั่นการเพิ่มตาราง
 
