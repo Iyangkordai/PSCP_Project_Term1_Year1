@@ -26,7 +26,7 @@ nav{
 .logo {
     width: 150px;
     height: auto;
-    filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(3px 1px 0px rgba(0, 0, 0, 25%));
 }
 
 .user_manual_bt{
@@ -44,6 +44,15 @@ nav{
     background-color: #055b45;
 }
 
+.user_manual_bt h3{
+    color: hsl(0, 0%, 100%);
+    transition: color 0.2s ease;
+}
+
+.user_manual_bt:hover h3{
+    color: #055b45;
+}
+
 .user_manual_icon{
     height: 30px;
     width: 30px;
@@ -55,6 +64,9 @@ nav{
 
     mask-size: cover;
     -webkit-mask-size: cover;
+
+    transition: backgroud-color 0.2s ease;
+
 }
 
 input::-webkit-outer-spin-button,
