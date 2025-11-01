@@ -563,3 +563,49 @@ h2{
 #accept_clear_bt:hover{
     background-color: rgba(5,176,132,0.58);
 }
+
+.carousel-container {
+    max-width: 1200px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    cursor: grab;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 30%;
+    flex: 0 0 30%;
+    height: 400px;
+    margin: 0 1.5%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+    transform: scale(0.9);
+    opacity: 0.8;
+    transition: all 0.5s ease;
+  }
+  
+  .slide.active {
+    flex: 0 0 40%;
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .carousel-container.grabbing {
+    cursor: grabbing;
+  }

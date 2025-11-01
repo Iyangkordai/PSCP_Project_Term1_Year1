@@ -209,3 +209,128 @@ function close_alert(){
 function clear_all_list(){
     location.reload()
 }
+
+//web sliding
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('container');
+    const carousel = document.getElementById('carousel');
+    const slides = Array.from(carousel.children);
+    const totalSlides = slides.length;
+  
+    let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+  
+    //looping
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[totalSlides - 1].cloneNode(true);
+    carousel.appendChild(firstClone);
+    carousel.insertBefore(lastClone, slides[0]);
+  
+    const allSlides = Array.from(carousel.children);
+  
+    function init() {
+      updateSizes();
+      setPositionByIndex();
+      updateActive();
+    }
+  
+    function updateSizes() {
+      const containerWidth = container.offsetWidth;
+      const sideWidth = containerWidth * 0.30;
+      allSlides.forEach(slide => {
+        slide.style.minWidth = `${sideWidth}px`;
+        slide.style.flex = `0 0 ${sideWidth}px`;
+      });
+    }
+  
+    function setPositionByIndex() {
+      const offset = (currentIndex + 1) * -33.333;
+      currentTranslate = offset;
+      prevTranslate = offset;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
+  
+    function updateActive() {
+      allSlides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        const realIndex = (i - 1 + totalSlides) % totalSlides;
+        if (realIndex === currentIndex) {
+          slide.classList.add('active');
+        }
+      });
+    }
+  
+    //draging handler
+    container.addEventListener('mousedown', dragStart);
+    container.addEventListener('touchstart', dragStart);
+    container.addEventListener('mousemove', dragMove);
+    container.addEventListener('touchmove', dragMove);
+    container.addEventListener('mouseup', dragEnd);
+    container.addEventListener('touchend', dragEnd);
+    container.addEventListener('mouseleave', dragEnd);
+  
+    function dragStart(e) {
+      if (e.type === 'touchstart') e = e.touches[0];
+      isDragging = true;
+      startX = e.clientX;
+      carousel.style.transition = 'none';
+      container.classList.add('grabbing');
+    }
+  
+    function dragMove(e) {
+      if (!isDragging) return;
+      if (e.type === 'touchmove') e = e.touches[0];
+      const currentX = e.clientX;
+      const diff = ((currentX - startX) / container.offsetWidth) * 100;
+      currentTranslate = prevTranslate + diff;
+      carousel.style.transform = `translateX(${currentTranslate}%)`;
+    }
+  
+    function dragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      container.classList.remove('grabbing');
+  
+      const movedBy = currentTranslate - prevTranslate;
+  
+      if (movedBy < -15) {
+        currentIndex = Math.min(currentIndex + 1, totalSlides - 1);
+      } else if (movedBy > 15) {
+        currentIndex = Math.max(currentIndex - 1, 0);
+      }
+  
+      if (currentIndex === totalSlides) {
+        currentIndex = 0;
+        setTimeout(resetWithoutTransition, 500);
+      } else if (currentIndex === -1) {
+        currentIndex = totalSlides - 1;
+        setTimeout(resetWithoutTransition, 500);
+      } else {
+        setPositionByIndex();
+      }
+  
+      updateActive();
+      prevTranslate = currentTranslate;
+    }
+  
+    function resetWithoutTransition() {
+      carousel.style.transition = 'none';
+      setPositionByIndex();
+      setTimeout(() => {
+        carousel.style.transition = 'transform 0.5s ease-in-out';
+      }, 50);
+    }
+  
+    // resize
+    window.addEventListener('resize', () => {
+      updateSizes();
+      setPositionByIndex();
+    });
+  
+    // initializing
+    init();
+  });
