@@ -231,6 +231,7 @@ h2{
 #profit_div{
     width: 100%;
     display: flex;
+    flex: 1;
     justify-content: space-around;
     gap: 50px;
     margin-bottom: 50px;
@@ -246,7 +247,6 @@ h2{
     flex-direction: column;
     flex: 1;
     background-color: #8BCCB1;
-    width: 550px;
     height: 300px;
     border-radius: 10px;
     align-items: center;
