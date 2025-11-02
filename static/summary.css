@@ -121,6 +121,10 @@ h2{
     align-self: center;
     gap: 70px;
     margin-top: 50px;
+    font-family: "Noto Sans Thai", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 #summary_div{
