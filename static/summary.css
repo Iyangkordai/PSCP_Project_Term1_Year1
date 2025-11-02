@@ -119,7 +119,8 @@ h2{
     display: flex;
     flex-direction: column;
     align-self: center;
-    gap: 50px;
+    gap: 70px;
+    margin-top: 50px;
 }
 
 #summary_div{
