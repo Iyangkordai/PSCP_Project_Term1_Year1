@@ -424,6 +424,7 @@ h2{
     background: rgba(5,176,132,0.58);
     color: white;
 }
+
 #clear_bt {
     display: flex;
     justify-self: center;
