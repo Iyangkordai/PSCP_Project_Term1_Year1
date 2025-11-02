@@ -120,12 +120,37 @@ h2{
     flex-direction: column;
     align-self: center;
     gap: 70px;
-    margin-top: 50px;
     font-family: "Noto Sans Thai", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
 }
+
+.back_button {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    cursor: pointer;
+    margin: 5px 0px 0px 50px;
+  }
+
+.back_icon{
+    width: 40px;
+    height: 40px;
+    background-color: #646464;
+    mask-image: url('icon/icon_back.svg');
+    -webkit-mask-image: url('icon/icon_back.svg');
+
+    mask-size: cover;
+    -webkit-mask-size: cover;
+
+    transition: backgroud-color 0.2s ease;
+}
+
+.back_button:hover .back_icon{
+    background-color: #05B084;
+}
+
 
 #summary_div{
     display: flex;
