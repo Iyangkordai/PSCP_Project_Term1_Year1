@@ -69,22 +69,71 @@
                     </div>
                 </div>
                 <div id="table_div">
-                    <div>
-                        <h2>รายการ</h2>
-                        <p>ต้นทุนของรายการนี้ (บาท)</p>
+                    <div class="header">
+                        <div class="head1">
+                            <h3>รายการ</h3>
+                        </div>
+                        <div class="head2">
+                            <h3>ต้นทุน (บาท)</h3>
+                        </div>
                     </div>
-                    <div>
-                        <p>ต้นทุนวัตถุดิบทั้งหมด</p>
-                        <span><strong>{{ "%.4f"|format(cost_total) }}</strong></span>
-                        <p>ค่าเสื่อมทั้งหมด</p>
-                        <span><strong>{{ "%.4f"|format(depreciation_total) }}</strong></span>
-                        <p>ค่าบรรจุภัณฑ์ทั้งหมด</p>
-                        <span><strong>{{ "%.4f"|format(package_total) }}</strong></span>
-                        <p>ค่าแรงทั้งหมด</p>
-                        <span><strong>{{ "%.4f"|format(labor_total) }}</strong></span>
+                    <div id="summary_table">
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;">
+                                <h3>ต้นทุนวัตถุดิบทั้งหมด</h3>
+                            </div>
+                            <div class="head2">
+                                <span><strong>{{ "%.4f"|format(cost_total) }}</strong></span>
+                            </div>
+                        </div>
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;">
+                                <h3>ค่าเสื่อมทั้งหมด</h3>
+                            </div>
+                            <div class="head2">
+                                <span><strong>{{ "%.4f"|format(depreciation_total) }}</strong></span>
+                            </div>
+                        </div>
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;">
+                                <h3>ค่าบรรจุภัณฑ์ทั้งหมด</h3>
+                            </div>
+                            <div class="head2">
+                                <span><strong>{{ "%.4f"|format(package_total) }}</strong></span>
+                            </div>
+                        </div>
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;">
+                                <h3>ค่าแรงทั้งหมด</h3>
+                            </div>
+                            <div class="head2">
+                                <span><strong>{{ "%.4f"|format(labor_total) }}</strong></span>
+                            </div>
+                        </div>
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;"></div>
+                            <div class="head2"></div>
+                        </div>
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;"></div>
+                            <div class="head2"></div>
+                        </div>
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;"></div>
+                            <div class="head2"></div>
+                        </div>
+                        <div class="list_div">
+                            <div class="head1" style="justify-content: flex-start; padding-left: 10px;"></div>
+                            <div class="head2"></div>
+                        </div>
                     </div>
-                    <div>
-                        <span><strong>{{ "%.4f"|format(product_cost) }}</strong></span>
+                    <div class="header">
+                        <div class="head1" style="justify-content: flex-end; padding-right: 10px;">
+                            <h3>รวมต้นทุนสินค้า</h3>
+                        </div>
+                        <div class="head2" style="background-color: #FFFFFF;">
+                            <span><strong>{{ "%.4f"|format(product_cost) }}</strong></span>
+                        </div>
                     </div>
                 </div>
             </div>
